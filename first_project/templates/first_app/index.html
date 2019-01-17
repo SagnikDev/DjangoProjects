@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>First App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}" >
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Hello This is Index.html</h1>
+    {{ insert_me }}
+    <h1>This is a Static Image:</h1>
+    <img src="{% static "images/image1.jpg" %}" height="100" width="100" alt="Oh Oh!!!">
+</body>
+</html>
