@@ -1,4 +1,4 @@
-"""PreojectTwo URL Configuration
+"""learning_users URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -13,12 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url,include
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
-from Two_App import views
+from basic_app import views
 urlpatterns = [
+    url(r'^$',views.index,name='index'),
+    url(r'^basic_app/',include('basic_app.urls')),
     path('admin/', admin.site.urls),
-    url(r'^users/',views.users,name='index'),
-    url(r'^$',views.sign_up,name='signup')
 ]
