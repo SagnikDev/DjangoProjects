@@ -1,0 +1,9 @@
+{% extends 'students_app/base.html' %}
+{% block body_block %}
+<h3>Are you really want to delete {{ student.first_name }} ?</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Confirm" class='btn btn-danger' >
+    <a href="{% url 'students_app:detail' pk=student.pk %}">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'students_app/base.html' %}
+{% block body_block %}
+<h1>Students List</h1>
+<ol>
+    {% for student in student_list %}
+        <li><h3><a href="{{ student.id }}">{{ student.first_name }}</a></h3></li>
+    {% endfor %}
+</ol>
+<a href="{% url 'students_app:create' %}" class='btn btn-success' >+ADD</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'students_app/base.html' %}
+{% block body_block %}
+<h1>
+    {% if not form.instance.pk %}
+    Create New Student 
+    {% else %}
+    Update Student
+    {% endif %}
+</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'students_app/base.html' %}
+{% block body_block %}
+<h2>{{ student.first_name }}'s Details:</h2><br>
+{% if student.profile_pic %}<br><br>
+<img src="{{ student.profile_pic.url }}" alt="image" height=200 width=200>
+{% endif %}
+<h3>Name: {{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</h3>
+<h3>Father's Name: {{ student.fathers_name }}</h3>
+<h3>Address: {{ student.address }}</h3>
+<h3>Department: {{ student.department }}</h3>
+<h3>Passing Year: {{ student.passing_year }}</h3>
+<h3>Roll Number: {{ student.roll_no }}</h3>
+<h3>Email: {{ student.email }}<h3>
+<h3>Phone Number: {{ student.phone_number }}</h3>
+<a href="{% url 'students_app:update' pk=student.pk %}" class='btn btn-warning'>Update</a>
+<a href="{% url 'students_app:delete' pk=student.pk %}" class='btn btn-danger'>Delete</a>
+{% endblock %}
