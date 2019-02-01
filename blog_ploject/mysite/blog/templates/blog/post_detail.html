@@ -19,7 +19,7 @@
 <div class="container">
     {% for comment in post.comments.all %}
     <br>
-    {% if user.is_authenticated and comment.approved_comment %}
+    {% if comment.approved_comment %}
     {{ comment.create_date }}
     <p>Posted By:{{ comment.author }}</p>
     <h4>{{ comment.text|safe|linebreaks }}</h4> 
